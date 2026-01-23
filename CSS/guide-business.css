@@ -935,6 +935,8 @@ body {
     margin: 0;
     position: relative;
     z-index: 1
+    
+}
 .guide-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(111, 78, 55, 0.15);
@@ -1047,6 +1049,7 @@ body {
     margin: 3rem 0;
 }
 
+.checklist-section h2 {
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
@@ -1095,8 +1098,8 @@ body {
 }
 
 .checkbox-item:hover span {
-    color: #6f4e37
-    background: #f0e6d2;
+    color: #6f4e37;
+    background : #f0e6d2;
 }
 
 .checkbox-item input[type="checkbox"] {
@@ -1159,7 +1162,7 @@ body {
     background: transparent;
     color: #ffd700;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(111, 78, 55, 0.2
+    box-shadow: 0 6px 12px rgba(111, 78, 55, 0.2);
     color: #6f4e37;
     padding: 0.8rem 2.5rem;
     text-decoration: none;
