@@ -1,0 +1,97 @@
+:root {
+    --coffee-brown: #906d54;
+    --coffee-light: #c19a6b;
+    --cream: #fff5e9;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--cream);
+    color: #533728;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar {
+    background-color: rgba(44, 26, 18, 0.85) !important;
+    backdrop-filter: blur(8px);
+}
+
+.navbar-brand {
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.navbar-brand span {
+    color: var(--coffee-light);
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(44, 26, 18, 0.75)),
+        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat fixed;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.btn-coffee {
+    background-color: var(--coffee-light);
+    border: none;
+    color: #1a0f09;
+    font-weight: 600;
+    padding: 0.75rem 1.8rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.btn-coffee:hover {
+    background-color: #d4a373;
+    transform: translateY(-3px);
+}
+
+.feature-card {
+    transition: all 0.35s;
+    border: none;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    transition: all 0.35s;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+}
+
+.menu-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    background-color: #2d1b12;
+    color: #d9c2a7;
+}
