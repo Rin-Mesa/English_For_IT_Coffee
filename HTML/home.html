@@ -1,11 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../JS/home.js">
 </head>
+
 <body>
-    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">IT<span>Coffee</span></a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guide-business.html">Coffee Guide</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-coffee ms-lg-3" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="container text-center hero-content">
+            <h1 class="display-2 fw-bold mb-4">Good Coffee<br>Good Code<br>Good Vibes</h1>
+            <p class="lead fs-4 mb-5 opacity-90">Specialty coffee • Fast Wi-Fi • Developer friendly space</p>
+
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+                <a href="product.html" class="btn btn-coffee btn-lg px-5">View Menu</a>
+                <a href="#features" class="btn btn-outline-light btn-lg px-5">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Features / Why us -->
+    <section id="features" class="py-5 py-lg-5">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold mb-5">Why People Love IT Coffee</h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="fs-1 mb-3">☕️</div>
+                        <h3>Specialty Coffee</h3>
+                        <p class="text-muted">Single origin & micro-lots<br>Hand-brewed with love</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="fs-1 mb-3">💻</div>
+                        <h3>Work-Friendly Space</h3>
+                        <p class="text-muted">Fast Wi-Fi • Power outlets everywhere<br>Quiet hours 9–12 AM</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="fs-1 mb-3">🌿</div>
+                        <h3>Cozy & Green</h3>
+                        <p class="text-muted">Lots of plants • Natural light<br>Comfy seats for long sessions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Popular Menu Items -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold mb-5">Popular Right Now</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="menu-card text-center">
+                        <div class="menu-img"
+                            style="background-image: url('https://www.seriouseats.com/thmb/_AXz5hDgak7oefbvTHCYZqAxt_M=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Web_1500-SEA-kalita-wave-pour-shot-jesse-raub-01-d4e2aa9b3a574c44abca52742a2874a4.jpg');">
+                        </div>
+                        <div class="p-4">
+                            <h5>Signature Espresso</h5>
+                            <p class="text-muted mb-1">38,000 KHR</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="menu-card text-center">
+                        <div class="menu-img"
+                            style="background-image: url('https://clivecoffee.com/cdn/shop/articles/Heart-6_c2746928-2ad7-4b66-bf45-a530075757a1.jpg?v=1563395066&width=850');">
+                        </div>
+                        <div class="p-4">
+                            <h5>Creamy Latte</h5>
+                            <p class="text-muted mb-1">48,000 KHR</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="menu-card text-center">
+                        <div class="menu-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800');">
+                        </div>
+                        <div class="p-4">
+                            <h5>V60 Pour Over</h5>
+                            <p class="text-muted mb-1">52,000 KHR</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="menu-card text-center">
+                        <div class="menu-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800');">
+                        </div>
+                        <div class="p-4">
+                            <h5>Butter Croissant</h5>
+                            <p class="text-muted mb-1">28,000 KHR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="product.html" class="btn btn-coffee btn-lg px-5">See Full  →</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 text-center">
+        <div class="container">
+            <h4 class="mb-3">IT<span>Coffee</span></h4>
+            <p class="mb-4">Where developers & coffee lovers meet in Phnom Penh</p>
+            <p class="mb-1">© 2026 IT Coffee Made with ☕️ & 💻</p>
+        </div>
+    </footer>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
