@@ -1,11 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coffee Shop Business Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
-    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="navs">
+            <a href="" class="nav-link">
+                <h3>Coffee</h3>
+            </a>
+            <div class="menu">
+                <a href="./home.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Stategy</a>
+                <a href="./about.html" class="nav-link">About</a>
+                <a href="./product.html" class="nav-link">Product</a>
+                <a href="./contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href=""><i class='bx bx-search' style="font-size: 20px;color: white;"></i></a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Coffee Shop Business Guide</h1>
+            <p>Complete roadmap to starting and managing a successful coffee shop</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Introduction -->
+        <section class="section intro-section">
+            <h2>Introduction</h2>
+            <p>Opening a coffee shop is honestly one of the best decisions I've ever made. But let me be real with you –
+                it's not as simple as just pouring good coffee. There's a lot that goes into making your coffee shop
+                actually succeed and keep customers coming back. This guide comes from real experience, mistakes, and
+                lessons learned along the way. I'll walk you through everything you need to know to turn your coffee
+                shop dream into a thriving business.</p>
+        </section>
+
+        <!-- Key Sections -->
+        <div class="guides-grid">
+            <!-- Planning & Research -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>📋 Planning & Market Research</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Here's what I wish I'd known first:</h4>
+                    <ul>
+                        <li>Check out what's already nearby – do they sell good coffee or mediocre stuff?</li>
+                        <li>Walk around the area at different times. How many people actually pass by?</li>
+                        <li>Talk to people about what they want in a coffee shop</li>
+                        <li>Find your angle – why would customers pick YOUR shop over others?</li>
+                        <li>Write down your ideas in a simple business plan (bankers love these)</li>
+                    </ul>
+                    <h4>Pro tip:</h4>
+                    <p>Spend at least a month observing the area. Sit at competing coffee shops, see what's working,
+                        what customers complain about. You'll learn more than you think.</p>
+                </div>
+            </article>
+
+            <!-- Finances & Startup Costs -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>💰 Finances & Startup Costs</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Real talk about the money:</h4>
+                    <ul>
+                        <li>Espresso machine & equipment: $20K - $50K (this is THE biggest expense)</li>
+                        <li>Rent & renovations: $30K - $100K (depends where you are)</li>
+                        <li>Coffee beans, milk, supplies: $5K - $15K to start</li>
+                        <li>Permits & licenses: $2K - $5K</li>
+                        <li>Signs & basic marketing: $5K - $10K</li>
+                        <li>Keep some cash aside for emergencies: $10K - $20K</li>
+                    </ul>
+                    <p><strong>Ballpark total: $72K - $200K</strong> (but some shops do it for less, others spend way
+                        more)</p>
+                </div>
+            </article>
+
+            <!-- Location & Facilities -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>🏪 Location & Facilities</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Finding the right spot is EVERYTHING:</h4>
+                    <ul>
+                        <li>Heavy foot traffic – you want people walking by constantly</li>
+                        <li>Easy parking nearby (seriously, customers won't go far for coffee)</li>
+                        <li>Close to public transit if possible</li>
+                        <li>Reasonable rent – don't blow your budget on a fancy location</li>
+                        <li>Near offices, schools, or other businesses = more customers</li>
+                    </ul>
+                    <h4>Space needs:</h4>
+                    <p>Around 1,000-1,500 sq ft works great (seating, kitchen, storage, bathroom). Don't go too small –
+                        you need room to move around during rush hour.</p>
+                </div>
+            </article>
+
+            <!-- Equipment & Supplies -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>⚙️ Equipment & Supplies</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Don't cheap out on equipment – it matters:</h4>
+                    <ul>
+                        <li>Good espresso machine (most important purchase)</li>
+                        <li>Quality grinder – bad grind = bad coffee, period</li>
+                        <li>Reliable coffee brewer for batch coffee</li>
+                        <li>Milk steamer that actually works well</li>
+                        <li>Point of sale system (iPad or computer)</li>
+                        <li>Commercial fridge</li>
+                    </ul>
+                    <h4>About suppliers:</h4>
+                    <p>Build relationships with good coffee roasters and suppliers early. You're only as good as your
+                        ingredients. Don't use cheap beans – customers can taste the difference.</p>
+                </div>
+            </article>
+
+            <!-- Menu Development -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>☕ Menu Development</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Keep it simple, but tasty:</h4>
+                    <ul>
+                        <li>Your core drinks – Lattes, Cappuccinos, Americanos (people know these)</li>
+                        <li>Some specialty options for adventurous customers</li>
+                        <li>Cold drinks – especially important in summer</li>
+                        <li>Non-coffee stuff – tea, hot chocolate, smoothies</li>
+                        <li>Food – pastries, sandwiches, maybe some salads</li>
+                    </ul>
+                    <p>Here's the thing: customers come for good coffee, but they stay if there's good food. Don't try
+                        to be everything – focus on doing a few things really well instead.</p>
+                </div>
+            </article>
+
+            <!-- Staffing & Training -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>👥 Staffing & Training</h3>
+                </div>
+                <div class="card-content">
+                    <h4>You'll need a good team:</h4>
+                    <ul>
+                        <li>Manager – someone who can handle the stress (maybe you at first)</li>
+                        <li>Experienced baristas – 3-5 depending on hours</li>
+                        <li>Cashier/front desk person</li>
+                        <li>Kitchen staff if you're doing food</li>
+                    </ul>
+                    <h4>Training is crucial:</h4>
+                    <p>Invest in proper barista training, food safety certifications, and customer service skills.
+                        Honestly, bad staff will kill a good coffee shop faster than bad coffee. Your team IS your
+                        business.</p>
+                </div>
+            </article>
+
+            <!-- Marketing & Promotion -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>📢 Marketing & Promotion</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Word of mouth is your best friend:</h4>
+                    <ul>
+                        <li>Instagram & Facebook – post good photos of your coffee</li>
+                        <li>Loyalty program – coffee cards, apps, rewards (people love this)</li>
+                        <li>Connect with local businesses – partnerships are gold</li>
+                        <li>Special events – live music, open mics, trivia nights</li>
+                        <li>Just be genuinely nice to customers – seriously, it works</li>
+                    </ul>
+                    <p>Don't spend huge amounts on ads. Build real relationships with your community instead. Your
+                        regular customers will become your best marketers.</p>
+                </div>
+            </article>
+
+            <!-- Operations & Management -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>📊 Operations & Management</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Day-to-day stuff that matters:</h4>
+                    <ul>
+                        <li>Track your inventory so you don't run out or waste money</li>
+                        <li>Have standards for every drink you make – consistency is key</li>
+                        <li>Make your customers feel welcome every single time</li>
+                        <li>Keep the place clean and safe (health inspectors are real)</li>
+                        <li>Know your numbers – profit, loss, cash flow</li>
+                    </ul>
+                    <h4>Hours that work:</h4>
+                    <p>Most successful shops open 6am-8pm, but this depends on your location. Coffee shops near offices
+                        open early, ones near colleges stay open later.</p>
+                </div>
+            </article>
+
+            <!-- Licenses & Legal -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>⚖️ Licenses & Legal Requirements</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Yeah, paperwork sucks but it's important:</h4>
+                    <ul>
+                        <li>Business License – basic stuff</li>
+                        <li>Food Service License – the city won't let you operate without it</li>
+                        <li>Health Department Permit – they'll inspect you</li>
+                        <li>Building Permit – if you're doing renovations</li>
+                        <li>EIN (Employer ID) – if you hire people</li>
+                        <li>Business Insurance – protect yourself</li>
+                    </ul>
+                    <p>Honestly, hire a lawyer or accountant to help with this. It's worth the money to do it right and
+                        avoid headaches later.</p>
+                </div>
+            </article>
+
+            <!-- Revenue & Profitability -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>💵 Revenue & Profitability</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Where the money comes from:</h4>
+                    <ul>
+                        <li>Coffee & drinks – this is your bread and butter (60-70%)</li>
+                        <li>Food – pastries, sandwiches, etc. (20-30%)</li>
+                        <li>Other stuff – merch, gift cards, beans to go (5-10%)</li>
+                    </ul>
+                    <h4>Real numbers:</h4>
+                    <p>Most coffee shops profit 5-15% of revenue. It takes about 2-3 years to break even. Yeah, it takes
+                        time, but if you stick with it and do it right, it pays off.</p>
+                </div>
+            </article>
+
+            <!-- Customer Experience -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>😊 Customer Experience</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Make it about more than just coffee:</h4>
+                    <ul>
+                        <li>Every drink should taste amazing – consistency matters</li>
+                        <li>Your staff should actually care about customers</li>
+                        <li>Make the space comfortable – good music, nice decor, cozy vibes</li>
+                        <li>Free WiFi and charging – people work at coffee shops now</li>
+                        <li>Fast service during rush hour so people don't get frustrated</li>
+                    </ul>
+                    <p>People come for the coffee, but they come BACK for the experience. Make them feel welcome,
+                        remember their names, learn their usual orders. That's what creates loyalty.</p>
+                </div>
+            </article>
+
+            <!-- Growth & Expansion -->
+            <article class="guide-card">
+                <div class="card-header">
+                    <h3>🚀 Growth & Expansion</h3>
+                </div>
+                <div class="card-content">
+                    <h4>Once you've got the first place working:</h4>
+                    <ul>
+                        <li>Open another location – or franchise the concept</li>
+                        <li>Sell your own coffee beans wholesale</li>
+                        <li>Online ordering and delivery</li>
+                        <li>Start your own roastery</li>
+                        <li>Subscription service for home delivery</li>
+                    </ul>
+                    <p>Don't think about this until your first shop is actually profitable and running smoothly. One
+                        great coffee shop is better than three mediocre ones.</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Quick Checklist -->
+        <section class="section checklist-section">
+            <h2>Pre-Launch Checklist</h2>
+            <div class="checklist">
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Complete market research and business plan</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Secure funding or financing</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Find and lease ideal location</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Obtain all necessary licenses and permits</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Purchase and install equipment</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Hire and train staff</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Establish supplier relationships</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Set up POS and inventory systems</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Create marketing materials and launch campaign</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Grand opening and customer service launch</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="section cta-section">
+            <h2>Need Help Getting Started?</h2>
+            <p>Have questions about starting your coffee shop? Contact our business consultants today!</p>
+            <a href="../HTML/contact.html" class="cta-button">Get in Touch</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 English For IT Coffee. All rights reserved.</p>
+        <p>Business Guide for Aspiring Coffee Shop Entrepreneurs</p>
+    </footer>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <span>📖</span>
+        <span id="indicatorText">Scrolling...</span>
+    </div>
+
+    <script src="../JavaScript/guide-business.js"></script>
+    <script>
+        // Hide guide-business link for regular users
+        document.addEventListener('DOMContentLoaded', function () {
+            let role = localStorage.getItem("role");
+            if (role === "user") {
+                let strategyLinks = document.querySelectorAll('a[href="./guide-business.html"], a[href="guide-business.html"]');
+                strategyLinks.forEach(link => {
+                    link.style.display = "none";
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

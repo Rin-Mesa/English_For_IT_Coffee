@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
+
 <body>
-    
+    <nav>
+        <div class="navs">
+            <a href="" class="nav-link">
+                <h3>Coffee</h3>
+            </a>
+            <div class="menu">
+                <a href="./home.html" class="nav-link">Home</a>
+                <a href="./guide-business.html" class="nav-link">Stategy</a>
+                <a href="./about.html" class="nav-link">About</a>
+                <a href="./product.html" class="nav-link">Product</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+            <a href=""><i class='bx bx-search' style="font-size: 20px;color: white;"></i></a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Contact Our Coffee Shop</h1>
+        <p class="subtitle">We’d love to hear from you ☕</p>
+
+        <div class="contact-wrapper">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Our Information</h2>
+                <p><strong>📍 Address:</strong> 123 Coffee Street, Phnom Penh</p>
+                <p><strong>📞 Phone:</strong> +855 12 345 678</p>
+                <p><strong>📧 Email:</strong> coffeeshop@gmail.com</p>
+                <p><strong>⏰ Opening Coffeeshop:</strong><br>
+                    Mon – Fri: 7:00 AM – 9:00 PM<br>
+                    Sat – Sun: 8:00 AM – 10:00 PM
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Hide guide-business link for regular users
+        document.addEventListener('DOMContentLoaded', function () {
+            let role = localStorage.getItem("role");
+            if (role === "user") {
+                let strategyLinks = document.querySelectorAll('a[href="./guide-business.html"], a[href="guide-business.html"]');
+                strategyLinks.forEach(link => {
+                    link.style.display = "none";
+                });
+            }
+        });
+    </script>
+
 </body>
+
 </html>
