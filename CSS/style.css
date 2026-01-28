@@ -5,12 +5,16 @@
     --cream: #fff5e9;
 }
 
-body {
+/* body {
     font-family: 'Inter', system-ui, sans-serif;
     background-color: var(--cream);
     color: #533728;
+} */
+.active {
+    color: #ff9843;
+    text-decoration: none;
+    border-bottom: 2px solid #ff9843;
 }
-
 h1,
 h2,
 h3 {
@@ -18,7 +22,7 @@ h3 {
 }
 
 .navbar {
-    background-color: rgba(44, 26, 18, 0.85) !important;
+    background-color: rgba(50, 15, 0, 0.85) !important;
     backdrop-filter: blur(8px);
 }
 
