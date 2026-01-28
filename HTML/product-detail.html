@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="icon" href="../img/image copy 14.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/product.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .detail-wrap {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .detail-head {
+            padding: 18px 22px;
+            background: linear-gradient(135deg, #2b1f16, #4a3426);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .detail-head a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .detail-body {
+            padding: 24px;
+        }
+
+        .detail-img {
+            width: 100%;
+            max-width: 360px;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.12));
+        }
+
+        .detail-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2b1f16;
+        }
+
+        .qty {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qty button {
+            background: #2b1f16;
+            color: white;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        .qty input {
+            width: 70px;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .btn-order {
+            background: linear-gradient(135deg, #2b1f16, #4a3426);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        .meta p {
+            margin: 6px 0;
+        }
+
+        .cart-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #cartBtn {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #cartBtn:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .cart-dropdown {
+            position: absolute;
+            top: 44px;
+            right: 0;
+            width: 320px;
+            background: white;
+            color: #2b1f16;
+            border-radius: 12px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+            overflow: hidden;
+            display: none;
+            z-index: 50;
+        }
+
+        .cart-dropdown.show {
+            display: block;
+        }
+
+        .cart-dropdown .cart-items {
+            max-height: 260px;
+            overflow: auto;
+            padding: 12px;
+        }
+
+        .cart-dropdown .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-dropdown .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-dropdown .cart-item .name {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .cart-dropdown .cart-item .sub {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .cart-dropdown .remove {
+            border: none;
+            background: #ff6b6b;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            font-weight: 800;
+        }
+
+        .cart-dropdown .footer {
+            padding: 12px;
+            background: #f8f9fa;
+            display: grid;
+            gap: 10px;
+        }
+
+        .cart-dropdown .total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+        }
+
+        .buy-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .buy-modal.show {
+            display: flex;
+        }
+
+        .buy-modal .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .buy-modal .content {
+            position: relative;
+            width: 92%;
+            max-width: 620px;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .buy-modal .head {
+            padding: 16px 18px;
+            background: linear-gradient(135deg, #2b1f16, #4a3426);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .buy-modal .head h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .buy-modal .close {
+            border: none;
+            background: rgba(255, 255, 255, 0.18);
+            color: white;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .buy-modal .body {
+            padding: 18px;
+        }
+
+        .buy-modal .summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 14px;
+        }
+
+        .buy-modal .summary .rowx {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 6px 0;
+        }
+
+        .buy-modal .foot {
+            padding: 14px 18px;
+            background: #f8f9fa;
+            display: grid;
+            gap: 10px;
+        }
+
+        .buy-modal .btn-buy {
+            background: linear-gradient(135deg, #2b1f16, #4a3426);
+            border: none;
+            color: white;
+            padding: 12px 14px;
+            border-radius: 12px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgba(234, 201, 153, 0.44);">
+    <div class="detail-wrap">
+        <div class="detail-card">
+            <div class="detail-head">
+                <a href="product.html"><i class='bx bx-left-arrow-alt'></i> Back</a>
+                <div class="cart-wrap">
+                    <button id="cartBtn" type="button" aria-label="Cart">
+                        <i class='bx bx-cart' style="font-size:22px;"></i>
+                        <span id="cartCount" class="badge bg-danger">0</span>
+                    </button>
+                    <div id="cartDropdown" class="cart-dropdown">
+                        <div class="cart-items" id="cartItems"></div>
+                        <div class="footer">
+                            <div class="total">
+                                <span>Total</span>
+                                <span id="cartTotal">$0.00</span>
+                            </div>
+                            <button id="cartCheckout" class="btn btn-dark" type="button">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-body">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-5">
+                        <img id="productImage" class="detail-img" src="" alt="Product">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 id="productName" class="mb-2"></h2>
+                        <p id="productDesc" class="text-muted"></p>
+
+                        <div class="meta bg-light p-3 rounded-3 mb-3">
+                            <p><strong>Category:</strong> <span id="productCategory"></span></p>
+                            <p><strong>Ingredients:</strong> <span id="productIngredients"></span></p>
+                            <p><strong>Size:</strong> <span id="productSize"></span></p>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="detail-price" id="productPrice"></div>
+                            <div class="qty">
+                                <button id="btnMinus" type="button">-</button>
+                                <input id="qtyInput" type="number" value="1" min="1" max="10">
+                                <button id="btnPlus" type="button">+</button>
+                            </div>
+                        </div>
+
+                        <button id="btnAdd" class="btn-order" type="button">Buy Now</button>
+                        <button id="btnCheckout" class="btn btn-outline-dark mt-2 w-100" type="button">Checkout</button>
+
+                        <div id="message" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="buyModal" class="buy-modal" aria-hidden="true">
+        <div class="overlay" id="buyOverlay"></div>
+        <div class="content">
+            <div class="head">
+                <h4>Complete your order</h4>
+                <button id="buyClose" class="close" type="button">×</button>
+            </div>
+            <div class="body">
+                <div class="summary">
+                    <div class="rowx"><strong>Product</strong><span id="buyProduct"></span></div>
+                    <div class="rowx"><strong>Quantity</strong><span id="buyQty"></span></div>
+                    <div class="rowx"><strong>Total</strong><span id="buyTotal"></span></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="buyName">Full Name *</label>
+                    <input id="buyName" class="form-control" type="text" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="buyPhone">Phone Number *</label>
+                    <input id="buyPhone" class="form-control" type="tel" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="buyEmail">Email</label>
+                    <input id="buyEmail" class="form-control" type="email">
+                </div>
+                <div class="mb-1">
+                    <label class="form-label" for="buyAddress">Address</label>
+                    <textarea id="buyAddress" class="form-control" rows="3"></textarea>
+                </div>
+                <div id="buyMsg" class="mt-3"></div>
+            </div>
+            <div class="foot">
+                <button id="buyConfirm" class="btn-buy" type="button">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../JavaScript/products-data.js"></script>
+    <script src="../JavaScript/product-detail.js"></script>
+</body>
+
+</html>
