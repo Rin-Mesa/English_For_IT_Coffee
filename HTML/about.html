@@ -5,23 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Shop</title>
-    <link rel="stylesheet" href="/CSS/about.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-white border-bottom">
-        <a class="navbar-brand" href="#">
-            <img src="/img/logo1.png" height="60" width="85" alt="Logo">
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link active" href="guide-business.html">Guide-business</a></li>
-            <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
-            <li class="nav-item"><a class="nav-link contact" href="contact.html">Contact</a></li>
-        </ul>
+    <nav>
+        <div class="navs">
+            <a href="" class="nav-link">
+                <h3>Coffee</h3>
+            </a>
+            <div class="menu">
+                <a href="./home.html" class="nav-link">Home</a>
+                <a href="./guide-business.html" class="nav-link">Stategy</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="./product.html" class="nav-link">Product</a>
+                <a href="./contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href=""><i class='bx bx-search' style="font-size: 20px;color: white;"></i></a>
+        </div>
     </nav>
 
     <div class="top-banner text-center">
@@ -42,7 +47,7 @@
             <div class="col-md-6 hero-text text-center d-flex flex-column justify-content-center">
                 <h2>Coffee Machine</h2>
                 <p class="mt-3">
-                    Our coffee machine brews fresh, rich coffee with perfect temperature and pressure, 
+                    Our coffee machine brews fresh, rich coffee with perfect temperature and pressure,
                     delivering smooth flavor in every cup.
                 </p>
                 <div class="mt-4">
@@ -89,7 +94,7 @@
             <div class="col-md-6 hero-text text-center d-flex flex-column justify-content-center">
                 <h2>Mocha Coffee</h2>
                 <p class="mt-3">
-                    Mocha Coffee is a delicious mix of espresso, chocolate, and milk. 
+                    Mocha Coffee is a delicious mix of espresso, chocolate, and milk.
                     It is slightly sweet and perfect for coffee lovers who enjoy chocolate flavor.
                 </p>
                 <div class="mt-4">
@@ -107,7 +112,7 @@
             <div class="col-md-6 hero-text text-center d-flex flex-column justify-content-center">
                 <h2>Latte</h2>
                 <p class="mt-3">
-                    Latte is a smooth and creamy coffee made with espresso and steamed milk. 
+                    Latte is a smooth and creamy coffee made with espresso and steamed milk.
                     It has a mild taste and is perfect for people who enjoy soft and milky coffee.
                 </p>
                 <div class="mt-4">
@@ -134,7 +139,7 @@
             <div class="col-md-6 hero-text text-center d-flex flex-column justify-content-center">
                 <h2>Cappuccino</h2>
                 <p class="mt-3">
-                    Cappuccino is a balanced coffee drink made with espresso, hot milk, and milk foam. 
+                    Cappuccino is a balanced coffee drink made with espresso, hot milk, and milk foam.
                     It has a rich taste with a light and fluffy texture on top.
                 </p>
                 <div class="mt-4">
@@ -152,7 +157,7 @@
             <div class="col-md-6 hero-text text-center d-flex flex-column justify-content-center">
                 <h2>Americano</h2>
                 <p class="mt-3">
-                    Americano is made by adding hot water to espresso. 
+                    Americano is made by adding hot water to espresso.
                     It has a lighter taste than espresso but still keeps a strong coffee flavor.
                 </p>
                 <div class="mt-4">
@@ -191,7 +196,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-decoration-none text-dark">Culture & Values</a></li>
                         <li><a href="#" class="text-decoration-none text-dark">Inclusion</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Jobs</a></li> 
+                        <li><a href="#" class="text-decoration-none text-dark">Jobs</a></li>
                     </ul>
                 </div>
 
@@ -230,6 +235,18 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Hide guide-business link for regular users
+        document.addEventListener('DOMContentLoaded', function () {
+            let role = localStorage.getItem("role");
+            if (role === "user") {
+                let strategyLinks = document.querySelectorAll('a[href="./guide-business.html"], a[href="guide-business.html"]');
+                strategyLinks.forEach(link => {
+                    link.style.display = "none";
+                });
+            }
+        });
+    </script>
 
 </body>
 
