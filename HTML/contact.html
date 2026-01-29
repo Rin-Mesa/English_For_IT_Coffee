@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Coffee shop</title>
+    <link rel="icon" href="../img/image copy 14.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 
 <body>
-    <nav>
+    <nav class="navbar">
         <div class="navs">
             <a href="" class="nav-link">
                 <h3>KEARAN</h3>
@@ -22,10 +23,11 @@
                 <a href="./guide-business.html" class="nav-link">Stategy</a>
                 <a href="./about.html" class="nav-link">About</a>
                 <a href="./product.html" class="nav-link">Product</a>
-                <a class="active" href="#" class="nav-link">Contact</a>
+                <a href="./contact.html" class="nav-link active">Contact</a>
             </div>
             <a href=""><i class='bx bx-search' style="font-size: 20px;color: white;"></i></a>
         </div>
+        <button id="signoutBtn" class="btn btn-coffee btn-sm">Signout</button>
     </nav>
     <div class="container">
         <h1>Contact Our Coffee Shop</h1>
@@ -57,13 +59,25 @@
         </div>
     </div>
     <script>
-        // Hide guide-business link for regular users
+        // Hide guide-business link for regular users and add signout functionality
         document.addEventListener('DOMContentLoaded', function () {
             let role = localStorage.getItem("role");
             if (role === "user") {
                 let strategyLinks = document.querySelectorAll('a[href="./guide-business.html"], a[href="guide-business.html"]');
                 strategyLinks.forEach(link => {
                     link.style.display = "none";
+                });
+            }
+
+            // Signout button functionality
+            let signoutBtn = document.getElementById('signoutBtn');
+            if (signoutBtn) {
+                signoutBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Clear localStorage
+                    localStorage.clear();
+                    // Redirect to login page
+                    window.location.href = '../index.html';
                 });
             }
         });

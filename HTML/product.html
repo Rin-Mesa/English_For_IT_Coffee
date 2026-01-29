@@ -14,7 +14,7 @@
 
 <body style="background-color: rgba(234, 201, 153, 0.44);">
     <header class="head">
-        <nav>
+        <nav class="navbar">
             <div class="navs">
                 <a href="" class="nav-link">
                     <h3>KEARAN</h3>
@@ -23,11 +23,12 @@
                     <a href="./home.html" class="nav-link">Home</a>
                     <a href="./guide-business.html" class="nav-link">Stategy</a>
                     <a href="./about.html" class="nav-link">About</a>
-                    <a class="active" href="#" class="nav-link">Product</a>
+                    <a href="./product.html" class="nav-link active">Product</a>
                     <a href="./contact.html" class="nav-link">Contact</a>
                 </div>
                 <a href=""><i class='bx bx-search' style="font-size: 20px;color: white;"></i></a>
             </div>
+            <button id="signoutBtn" class="btn btn-coffee btn-sm">Signout</button>
         </nav>
         <div class="header">
             <div class="div">
@@ -37,7 +38,8 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt, quasi!</p>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <button class="btn btn-primary mt-5"><a href="#product"
-                        style="text-decoration: none;color: white;">Order Now</a></button>
+                        style="text-decoration: none;color: white;">Order
+                        Now</a></button>
             </div>
             <div class="div1">
                 <img src="../img/image.png" alt="" style="width: 135%;">
@@ -439,13 +441,25 @@
     <script src="../JavaScript/products-data.js"></script>
     <script src="../JavaScript/product.js"></script>
     <script>
-        // Hide guide-business link for regular users
+        // Hide guide-business link for regular users and add signout functionality
         document.addEventListener('DOMContentLoaded', function () {
             let role = localStorage.getItem("role");
             if (role === "user") {
                 let strategyLinks = document.querySelectorAll('a[href="./guide-business.html"], a[href="guide-business.html"]');
                 strategyLinks.forEach(link => {
                     link.style.display = "none";
+                });
+            }
+
+            // Signout button functionality
+            let signoutBtn = document.getElementById('signoutBtn');
+            if (signoutBtn) {
+                signoutBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Clear localStorage
+                    localStorage.clear();
+                    // Redirect to login page
+                    window.location.href = '../index.html';
                 });
             }
         });
